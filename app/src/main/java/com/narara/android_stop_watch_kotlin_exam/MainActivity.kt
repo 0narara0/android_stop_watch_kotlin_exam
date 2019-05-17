@@ -9,13 +9,17 @@ import java.util.*
 import kotlin.concurrent.timer
 
 class MainActivity : AppCompatActivity() {
+    val viewModel : StopWatchViewModel by lazy {
+        ViewModelProviders.of(this).get(StopWatchViewModel::class.java)
+    }
 
+//    lateinit var viewModel : StopWatchViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val viewModel = ViewModelProviders.of(this).get(StopWatchViewModel::class.java)
+//      viewModel = ViewModelProviders.of(this).get(StopWatchViewModel::class.java)
 
         viewModel.time.observe(this, androidx.lifecycle.Observer { time ->
             val sec = time / 100
