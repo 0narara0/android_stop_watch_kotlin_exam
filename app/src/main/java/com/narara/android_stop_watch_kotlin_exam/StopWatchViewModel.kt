@@ -11,7 +11,7 @@ class StopWatchViewModel : ViewModel() {
     val time : MutableLiveData<Int> by lazy {
         MutableLiveData<Int>()
     }
-    var isRunning = MutableLiveData<Boolean>()
+    val isRunning = MutableLiveData<Boolean>()
 
     init { // 초기화 블럭 , 생성자에서 하는 것을 여기서 하면 된다
         time.value = 0
